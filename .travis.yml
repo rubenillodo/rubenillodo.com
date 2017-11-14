@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+  - "8"
+
+cache: yarn
+
+script:
+  - yarn lint
+  - yarn format
+  - git diff-index --quiet HEAD -- # Will fail if "yarn format" changed any files
+  - yarn build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: public
+  fqdn: rubenillodo.com
+  on:
+    branch: master
+
+after_deploy:
+  - "curl -X DELETE \"https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache\" -H \"X-Auth-Email: $CLOUDFLARE_AUTH_EMAIL\" -H \"X-Auth-Key: $CLOUDFLARE_AUTH_KEY\" -H \"Content-Type: application/json\" --data '{\"purge_everything\":true}'"
+
+env:
+  global:
+    - secure: "Ku3qt7mSwNyxmmCiTuJlo7zBQkX00xEPvirmnVGnaWGGCWA44URjMcj6HYTuZToGqL8/7Hy3vexlf1UB0gkc5vZZavUC+xB+qWUooUgG5uPEgQCEqg6+H0lERT4S0vgoLnd6GlMI72OawTS3x7neTYArZo7/YxIPNxbNhoDoIudg2I5NJB+bNGZgFLnog+H/RCYVVF7HXRV/heRb7W7uXcs6+L3/B1DzVVNgGN957LS5tTjXXD54KMB/MoJRYCxPgCmo72Aj298bzzP+MtyJ2AZkanV21GmnGoqEvyb8OehBPe7S3zUk/qlPcCFZwMs8/8r2fwI7RMRIFd9/CW81S33VpXlXPl4mk8h7f7xRsuyi12ibpo2hc0ZGUuX0sP8oBfGecTM43HH0SSBXlzdaR3nR0LaDbfJQGY823srHZw2aRCQs1CTlUSW99HiDHD2fc5+F18HrqhpdAIzhfbDKDYVmlEEk0ZSyMMa8HOgu40wtb+qczD8oroVlnjdFg1LUJzqzXa413txlUwZV1RqrNnAA+0bpw7DYQzp2hrxJS3q/CQeqPs4vbwo7aw73qKFEIovAs/pi3jIWD4l0CBEtlbQW47U04j/3O0x+3joIwjx70Y/Y5M2BGQ3nF0YQpImCiQM7IUFXaqaO7WkZlrJTIUgDOCpRTRTQ4ic/6WRlLuA="
+    - secure: "LidmrzrPchH0rJ0ntcI47qvwAnFZML9uwx7W9CUJnE5I0nUE7AuMIGHR6mWIgv2VwMaUfg7ZSH9i8FM9g02JosybXOFADOLogjPM9ZppnuUoORm63UDirgtqt3GJrfWvbB5Vj0sqjr0qmT+J4Q1DNC+cQ474h4URDAj+YJCUT0tR3Gx0cHCRNtvUOFLVo2JCRPZ2lXkJwIXBguGiYryI0MZ0mhWzAa542euLmHVE/5ARdv9tQEMuAR8CFFLiOP2pLyzxuoeeEZ0pj3Rb6YpssRj8ITrYk/8s1QlaBAf/AOe9hWiB6s8MMzDTtZvx8ulnDY0CrYEPf/ROaFJDLrgPzzfC65s9Dey9/ndR6HIzXDx9XVwv7HY1EL0Iclm/glvpuDbBHC8wuqhEWk6J4A271+92wz0nHUJK0zsCFFz5tu+9J2iyExvC2Udtbf/zF/AFs1Vq3RiydOxLD88BYzKzuvyn5arayIIG+c9Y8NjUljeubEMENFVApxn/ga2oUFMVrsZ+FKau32Cqmv1Y4eAn/pHvaeu2rFVJtJBg/dPt20sZkfZvf2zWDNCQ2Ma77dNTMrUFOWjsxD850Kj8P/MCaO0y2GzSOEJ1k6vuVbqw0xDaqEQrsUNcIfDIDq5fRp1deIdMPW9RB6yHm/yJyIPys0Ot2i5i3ebtVDnJW9jNHG0="
+    - secure: "6qMc+JiV4wB2OfsZaInIkSWq7x2QkWnDVBZx1rZSh8X+n0kf34X8GYr17X51UxSgIbWR9UO2r+h0ORNFN0bG68d+3HFG5r0IPKJpuNxB1dIVhc9T8NG3BNg4vL4KiMJ0+HqERnNARfPbpCRROBvUElxI5Luy72ZCmqdirYDIBEcO7ws4A/91a1y3bRKv2+5iQHwdSzADWE2eJJsNDTqZ1S4t8OFwqxfBevI9fsPIs66sKPyK/NmaVxeTcohdpW/Bv+4DLuE9eSUfLN5gqf9dTL3RqqOS4yqZyj1LYzuo8xtGHHvZVhoLWuA9GDUuqjerJpe1BoNCXfCbvFJtuP7GSfpVNgwomBBk2cmQ3Ye9+nucyrBaQkt0Ewuhopg1Ohgf5LiTDJOV51GCBdrCMLDZTsOdRxFygSLLhFnFEIstmHKCGPJT2g1dx0mJZV7A5kXBwWteCW0dIEsWBZ5DNqfhHMhZIvcgupq1k0RkuV3tYLKlnO65MX2KD9U36uQCssDKCuxQOBt/IxlTDCyycQx38jJrMioxhIk7Tv7DpKISg4gfdKqv9InZfw0Q4pByvw1baIeUvFoLCc9KNs4CvI5mseREvgFFfcU32Ry1t0PghhfXBKxKgISRNvsOoeD3XB/IuszT3FMxaTSEZPJPbnPZgJh/sYaguPLFB4tC1CiAmOo="
+    - secure: "avZWwWMGzkgGD/0HhIWWmT7Tf9HkyMUVswa6z/yH39ZsZzq/Zk27lewWczyisPSQRjg2do5GhKgPmYwvGl3bcqoneUtbuCantA9/rT/noPjYL/j53TsR8WX1jfF2nNeFF/OYVgeC6xVx+vJmYC57cimhQhE1eLDTZ9CmtfayMJci8E0wDB4xLd/xp0FBnk6BZELSJgjZ0QOV2dzxUKDAU0ZnWXUovo8m2fIkF+lfaS1RhU5f4/yGofCxx01mHgwuvU4MRWtf4P+gff4o72V/44StjSU0OSaBYUdJXalQI6Yua5yLT+QFk3akiZ5XPyrXuMkB35DuXAfTtROyzlBrNY7cFfC5sEXOZCyNRB2xcfH/Z5JCK3Q1PEibs6Nq8c7b0dNVp3CZhpwvBMPCAu78LaRxPBobfbqfIxD8K5DMJIsaQZoAJBoCE2lidCn3JmgWf80g0f+PmTZwRbdkKFi1bKWhrddjKAWmqobKd1mmEaxS78p16kcDotXnm0pYl+JbyPbxJlVF/3iEWiKbG985zTIfXyJEoBIJFa1MMm3kguGSRcnIz8ovHTJwK2T8QCuqkW1ZtPbM/qWxtQUKZc0fJwJKPffRK3vYJGPedd+A+8rHmoAYO9V0g0kfI6XpTTy6tPEWGeZFX6Z14a0b95lZtz6BOqccV1Mxg0BocBmYcjc="
