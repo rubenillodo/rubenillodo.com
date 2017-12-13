@@ -56,9 +56,9 @@ const Tag = styled.span`
 interface Props {
   at: string;
   from: moment.Moment;
+  tags?: string[];
   title: string;
   to: moment.Moment | null;
-  tags?: string[];
 }
 
 export default class Event extends React.PureComponent<Props> {

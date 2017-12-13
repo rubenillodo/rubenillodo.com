@@ -8,6 +8,10 @@ const Container = styled.div`
   padding-bottom: ${styles.timeline.paddingBottom};
   position: relative;
   width: 100%;
+
+  @media print {
+    padding-bottom: 0;
+  }
 `;
 
 const BaseLine = styled.div`

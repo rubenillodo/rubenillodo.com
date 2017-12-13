@@ -43,6 +43,10 @@ const SectionIntro = Section.extend`
 const SectionTimeline = Section.extend`
   justify-content: flex-end;
   padding-bottom: 0 !important;
+
+  @media print {
+    padding-top: 0 !important;
+  }
 `;
 
 const AvatarWrapper = styled.div`
@@ -52,7 +56,7 @@ const AvatarWrapper = styled.div`
   position: relative;
   width: calc(2em - 0.25em);
 
-  @media (min-width: ${styles.sizeHuge * 3}em) {
+  @media screen and (min-width: ${styles.sizeHuge * 3}em) {
     font-size: ${styles.sizeHuge}em;
   }
 
@@ -115,9 +119,16 @@ const IndexPage = () => (
     <SectionTimeline>
       <Timeline>
         <Event
-          title="Senior Software Engineer"
-          from={moment.utc("2015-09-01")}
+          title="Tech Lead"
+          from={moment.utc("2017-12-01")}
           to={null}
+          at="EF – English First"
+          tags={["ES2015", "TypeScript", "ReactJS", "NodeJS", "Android", "CI/CD", "Docker", "AWS ECS"]}
+        />
+        <Event
+          title="Senior Software Engineer"
+          from={moment.utc("2016-10-01")}
+          to={moment.utc("2017-11-30")}
           at="EF – English First"
           tags={[
             "ES2015",
@@ -129,10 +140,16 @@ const IndexPage = () => (
             "CI/CD",
             "Jest",
             "Enzyme",
-            "Android",
             "Docker",
             "AWS ECS",
           ]}
+        />
+        <Event
+          title="Software Engineer"
+          from={moment.utc("2015-09-01")}
+          to={moment.utc("2016-09-30")}
+          at="EF – English First"
+          tags={["ES2015", "ReactJS", "Redux", "NodeJS", "Webpack", "CI/CD", "Jest", "Enzyme", "Android"]}
         />
         <Event
           title="Mobile Web Developer"
@@ -147,12 +164,6 @@ const IndexPage = () => (
           to={moment.utc("2014-09-01")}
           at="Zadia Software"
           tags={["AngularJS", "Ruby on Rails", "Android", "iOS", "Dagger", "Retrofit", "RxAndroid", "Gulp"]}
-        />
-        <Event
-          title="BSc in Computer Science Engineering"
-          from={moment.utc("2008-10-01")}
-          to={moment.utc("2013-09-01")}
-          at="Universidade de Santiago de Compostela"
         />
       </Timeline>
     </SectionTimeline>
