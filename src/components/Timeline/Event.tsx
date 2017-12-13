@@ -70,7 +70,9 @@ export default class Event extends React.PureComponent<Props> {
           <Company>@&nbsp;{this.props.at}</Company>
         </header>
         <Period>
-          {this.showDate(this.props.from)} – {this.showDate(this.props.to)}
+          <time dateTime={this.props.from.toISOString()}>{this.showDate(this.props.from)}</time>
+          <span> – </span>
+          <time dateTime={(this.props.to || moment(Date.now())).toISOString()}>{this.showDate(this.props.to)}</time>
         </Period>
         {this.props.tags && <Tags>{this.buildTags(this.props.tags)}</Tags>}
       </Card>

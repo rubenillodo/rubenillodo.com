@@ -116,7 +116,7 @@ const IndexPage = () => (
       <Timeline>
         <Event
           title="Senior Software Engineer"
-          from={moment("2015-09-01")}
+          from={moment.utc("2015-09-01")}
           to={null}
           at="EF – English First"
           tags={[
@@ -136,22 +136,22 @@ const IndexPage = () => (
         />
         <Event
           title="Mobile Web Developer"
-          from={moment("2015-01-01")}
-          to={moment("2015-09-01")}
+          from={moment.utc("2015-01-01")}
+          to={moment.utc("2015-09-01")}
           at="Mobile Now Group"
           tags={["WeChat", "AngularJS", "NodeJS", "Gulp", "Firebase", "MongoDB", "Loopback", "Docker", "PhoneGap"]}
         />
         <Event
           title="Software Developer"
-          from={moment("2013-02-01")}
-          to={moment("2014-09-01")}
+          from={moment.utc("2013-02-01")}
+          to={moment.utc("2014-09-01")}
           at="Zadia Software"
           tags={["AngularJS", "Ruby on Rails", "Android", "iOS", "Dagger", "Retrofit", "RxAndroid", "Gulp"]}
         />
         <Event
           title="BSc in Computer Science Engineering"
-          from={moment("2008-10-01")}
-          to={moment("2013-09-01")}
+          from={moment.utc("2008-10-01")}
+          to={moment.utc("2013-09-01")}
           at="Universidade de Santiago de Compostela"
         />
       </Timeline>
