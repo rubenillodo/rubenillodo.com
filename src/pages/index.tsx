@@ -56,6 +56,10 @@ const AvatarWrapper = styled.div`
   position: relative;
   width: calc(2em - 0.25em);
 
+  @media print {
+    width: 1em;
+  }
+
   @media screen and (min-width: ${styles.sizeHuge * 3}em) {
     font-size: ${styles.sizeHuge}em;
   }
@@ -71,6 +75,10 @@ const AvatarWrapper = styled.div`
   > *:last-child {
     left: 0.75em;
     z-index: 1;
+
+    @media print {
+      display: none;
+    }
   }
 `;
 
