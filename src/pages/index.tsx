@@ -150,6 +150,7 @@ const IndexPage = () => (
             "Enzyme",
             "Docker",
             "AWS ECS",
+            "AWS Lambda",
           ]}
         />
         <Event
