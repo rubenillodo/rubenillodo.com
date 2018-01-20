@@ -49,7 +49,7 @@ export default class Timeline extends React.PureComponent {
     return (
       <Container>
         <BaseLine />
-        {React.Children.map(this.props.children, child => <Element>{child}</Element>)}
+        {React.Children.map(this.props.children, (child) => <Element>{child}</Element>)}
       </Container>
     );
   }
