@@ -131,7 +131,7 @@ const IndexPage = () => (
           from={moment.utc("2017-12-01")}
           to={null}
           at="EF – English First"
-          tags={["ES2015", "TypeScript", "ReactJS", "NodeJS", "Android", "CI/CD", "Docker", "AWS ECS"]}
+          tags={["ES2015", "TypeScript", "ReactJS", "NodeJS", "Android", "CI/CD", "Docker", "AWS ECS", "AWS Lambda"]}
         />
         <Event
           title="Senior Software Engineer"
@@ -150,7 +150,6 @@ const IndexPage = () => (
             "Enzyme",
             "Docker",
             "AWS ECS",
-            "AWS Lambda",
           ]}
         />
         <Event
