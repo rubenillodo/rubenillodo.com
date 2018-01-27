@@ -55,14 +55,16 @@ const Tag = styled.span`
 
 interface Props {
   at: string;
-  from: moment.Moment;
+  from: string;
   tags?: string[];
   title: string;
-  to: moment.Moment | null;
+  to?: string;
 }
 
 export default class Event extends React.PureComponent<Props> {
   public render() {
+    const from = moment.parseZone(this.props.from);
+    const to = this.props.to ? moment.parseZone(this.props.to) : moment(Date.now());
     return (
       <Card>
         <header>
@@ -70,9 +72,9 @@ export default class Event extends React.PureComponent<Props> {
           <Company>@&nbsp;{this.props.at}</Company>
         </header>
         <Period>
-          <time dateTime={this.props.from.toISOString()}>{this.showDate(this.props.from)}</time>
+          <time dateTime={from.toISOString()}>{this.showDate(from)}</time>
           <span> – </span>
-          <time dateTime={(this.props.to || moment(Date.now())).toISOString()}>{this.showDate(this.props.to)}</time>
+          <time dateTime={to.toISOString()}>{this.showDate(to)}</time>
         </Period>
         {this.props.tags && <Tags>{this.buildTags(this.props.tags)}</Tags>}
       </Card>
@@ -90,7 +92,7 @@ export default class Event extends React.PureComponent<Props> {
   private buildTags(tags: string[]): React.ReactNode[] {
     const lastIndex = tags.length - 1;
     return tags.map((tag, index) => {
-      const tagComponent = <Tag>{tag}</Tag>;
+      const tagComponent = <Tag key={tag}>{tag}</Tag>;
       if (index === lastIndex) return tagComponent;
       return [tagComponent, ", "];
     });

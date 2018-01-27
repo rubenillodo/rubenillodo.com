@@ -1,5 +1,13 @@
 module.exports = {
   plugins: [
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "data",
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    "gatsby-transformer-json",
     "gatsby-plugin-typescript",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",

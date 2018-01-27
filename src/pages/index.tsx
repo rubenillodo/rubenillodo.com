@@ -1,4 +1,3 @@
-import * as moment from "moment";
 import * as React from "react";
 import styled from "styled-components";
 
@@ -109,7 +108,28 @@ const Mail = styled.div`
   margin-top: ${styles.sizeBase}em;
 `;
 
-const IndexPage = () => (
+interface Props {
+  data: {
+    allEventsJson: {
+      edges: Edge[];
+    };
+  };
+}
+
+interface Edge {
+  node: EventData;
+}
+
+interface EventData {
+  id: string;
+  title: string;
+  from: string;
+  to?: string;
+  at: string;
+  tags: string[];
+}
+
+const IndexPage: React.StatelessComponent<Props> = ({ data: { allEventsJson: { edges: events } } }) => (
   <Container>
     <SectionIntro>
       <AvatarWrapper>
@@ -125,57 +145,26 @@ const IndexPage = () => (
       </Mail>
     </SectionIntro>
     <SectionTimeline>
-      <Timeline>
-        <Event
-          title="Tech Lead"
-          from={moment.utc("2017-12-01")}
-          to={null}
-          at="EF – English First"
-          tags={["ES2015", "TypeScript", "ReactJS", "NodeJS", "Android", "CI/CD", "Docker", "AWS ECS", "AWS Lambda"]}
-        />
-        <Event
-          title="Senior Software Engineer"
-          from={moment.utc("2016-10-01")}
-          to={moment.utc("2017-11-30")}
-          at="EF – English First"
-          tags={[
-            "ES2015",
-            "TypeScript",
-            "ReactJS",
-            "Redux",
-            "NodeJS",
-            "Webpack",
-            "CI/CD",
-            "Jest",
-            "Enzyme",
-            "Docker",
-            "AWS ECS",
-          ]}
-        />
-        <Event
-          title="Software Engineer"
-          from={moment.utc("2015-09-01")}
-          to={moment.utc("2016-09-30")}
-          at="EF – English First"
-          tags={["ES2015", "ReactJS", "Redux", "NodeJS", "Webpack", "CI/CD", "Jest", "Enzyme", "Android"]}
-        />
-        <Event
-          title="Mobile Web Developer"
-          from={moment.utc("2015-01-01")}
-          to={moment.utc("2015-09-01")}
-          at="Mobile Now Group"
-          tags={["WeChat", "AngularJS", "NodeJS", "Gulp", "Firebase", "MongoDB", "Loopback", "Docker", "PhoneGap"]}
-        />
-        <Event
-          title="Software Developer"
-          from={moment.utc("2013-02-01")}
-          to={moment.utc("2014-09-01")}
-          at="Zadia Software"
-          tags={["AngularJS", "Ruby on Rails", "Android", "iOS", "Dagger", "Retrofit", "RxAndroid", "Gulp"]}
-        />
-      </Timeline>
+      <Timeline>{events.map((event) => <Event {...event.node} key={event.node.id} />)}</Timeline>
     </SectionTimeline>
   </Container>
 );
+
+export const query = graphql`
+  query AllEvents {
+    allEventsJson(sort: { fields: [from], order: DESC }) {
+      edges {
+        node {
+          id
+          title
+          from
+          to
+          at
+          tags
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
