@@ -3,5 +3,5 @@
   "from": "2015-09-01T00:00:00.000Z",
   "to": "2016-09-30T00:00:00.000Z",
   "at": "EF – English First",
-  "tags": ["ES2015", "ReactJS", "Redux", "NodeJS", "Webpack", "CI/CD", "Jest", "Enzyme", "Android"]
+  "tags": ["ES2015", "ReactJS", "Redux", "NodeJS", "Webpack", "CI/CD", "Jasmine", "Enzyme", "Android"]
 }
