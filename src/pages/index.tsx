@@ -138,7 +138,7 @@ const IndexPage: React.StatelessComponent<Props> = ({ data: { allEventsJson: { e
       </AvatarWrapper>
       <Header>
         <h1>Rubén Illodo Brea</h1>
-        <p>Software Engineer in&nbsp;Shanghai</p>
+        <p>Software Engineer in&nbsp;Barcelona</p>
       </Header>
       <Mail>
         <a href="mailto:me@rubenillodo.com">me@rubenillodo.com</a>
