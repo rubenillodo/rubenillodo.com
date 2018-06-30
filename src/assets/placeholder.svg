@@ -1,1 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1020"><path fill="#71685e" d="M0 0h1024v1020H0z"/><g fill-opacity=".5"><path fill="#ffffb5" d="M206 574L382-62l124 1144"/><path fill="#00003a" d="M770 534l316 456-420 92"/><path fill="#ffcd82" d="M658 174L558 618l392-132"/><path fill="#000016" d="M1086 610L754 214l268-276"/><path fill="#00000e" d="M-62 586l348-416L122-62"/><path fill="#000035" d="M122 626L-62 998l304 84"/><path fill="#fbf7b6" d="M270-62l216 316-180 468"/><path fill="#c2c18e" d="M146 878l572-44-120 248"/><path fill="#000034" d="M622 1082l424-452 24 380"/><path fill="#f96900" d="M290 582l-180 24-20-276"/><path fill="#0b0020" d="M634 270l244-76-324-32"/><path fill="#d9d7a0" d="M534-62l8 464-96-332"/><path fill="#ffffa5" d="M570 302l216-48 20 112"/><path fill="#0c081d" d="M526 598l-52-244-28 464"/><path fill="#220d0c" d="M-62 118l292 168-32 164"/><path fill="#485387" d="M710 922l264-628 92 424"/><path fill="#f4fd91" d="M22-50l-4 212 88-144"/><path fill="#ffbe7e" d="M622 410l44 196 264-220"/><path fill="#00002e" d="M190 906l20-316 44 216"/><path fill="#001" d="M50 58l228 88-196 96"/><path fill="#a9a67e" d="M262 986l440 96-488-696"/><path fill="#030928" d="M1086 102L910-62l-80 476"/><path fill="#050b30" d="M838-58L818 94 590 6"/><path fill="#cbb48a" d="M510 826l64-136-72-244"/><path fill="#000056" d="M930 602l-212 60-28-92"/><path fill="#dcdaa2" d="M210 726l-52-132-44 152"/><path fill="#d6be93" d="M966 650l68 104-228-120"/><path fill="#c7c78b" d="M470 574L390-62 242 54"/><path fill="#46262c" d="M538 690l4-292 96 180"/><path fill="#000327" d="M-6 746l-28 304 248 32"/><path fill="#34313a" d="M494 98l4 340-68-212"/><path fill="#ecd796" d="M546 422l-36 148-8-292"/><path fill="#4d102a" d="M690 414l-104-36 244-8"/><path fill="#efe6cb" d="M654 846l20 160 40-288"/><path fill="#56524d" d="M510 706l-76-100 8 352"/><path fill="#e3c99b" d="M826 578l92 4 48-104"/><path fill="#000013" d="M698 810l4 144 76-244"/><path fill="#fbf5d2" d="M374 414L286 94v560"/><path fill="#000031" d="M162 494l-16-72-44 64"/><path fill="#695e59" d="M230 190l64 200L86 246"/><path fill="#f55300" d="M226 394L106 614l104-20"/><path fill="#000321" d="M1086 1002l-84-268-232 336"/><path fill="#2b3c67" d="M-18 774l160 220 176-248"/><path fill="#8e8e84" d="M890 198L874-62l-72 232"/><path fill="#ffe89d" d="M646 382l140-136-188 36"/><path fill="#5a566a" d="M530 734l152 20-40 268"/><path fill="#f9a82f" d="M66 398l64-52 52 92"/><path fill="#001d77" d="M782 578l296 120-124-100"/><path fill="#5ea272" d="M146 30L-10 62l308 44"/><path d="M122 590L86 790l64-132"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1024" height="1024">
+<rect x="0" y="0" width="1024" height="1024" fill="#83835a" />
+<g transform="scale(4.000000) translate(0.5 0.5)">
+<polygon fill="#181e23" fill-opacity="0.501961" points="84,167 97,85 196,180" />
+<polygon fill="#bca383" fill-opacity="0.501961" points="252,271 271,137 -16,245" />
+<polygon fill="#daf5ff" fill-opacity="0.501961" points="95,63 105,89 47,67" />
+<polygon fill="#446423" fill-opacity="0.501961" points="43,-16 -16,68 25,196" />
+<polygon fill="#d3bd88" fill-opacity="0.501961" points="129,159 106,116 95,165" />
+<polygon fill="#001639" fill-opacity="0.501961" points="99,28 101,121 138,158" />
+<polygon fill="#497222" fill-opacity="0.501961" points="129,-16 271,101 231,12" />
+<polygon fill="#bda487" fill-opacity="0.501961" points="99,271 146,195 26,135" />
+<polygon fill="#dcbba2" fill-opacity="0.501961" points="185,125 230,110 255,167" />
+<polygon fill="#000000" fill-opacity="0.501961" points="88,116 91,165 105,115" />
+<polygon fill="#a59d65" fill-opacity="0.501961" points="116,100 187,161 141,158" />
+<polygon fill="#bfd9ff" fill-opacity="0.501961" points="106,80 81,59 90,110" />
+<polygon fill="#051b0d" fill-opacity="0.501961" points="122,167 192,178 202,158" />
+<polygon fill="#767d4b" fill-opacity="0.501961" points="230,153 183,271 155,180" />
+<polygon fill="#c1d3e3" fill-opacity="0.501961" points="100,58 123,66 157,50" />
+<polygon fill="#dbbca3" fill-opacity="0.501961" points="219,184 242,271 266,233" />
+<polygon fill="#687a3b" fill-opacity="0.501961" points="64,-16 218,35 64,67" />
+<polygon fill="#bc9f80" fill-opacity="0.501961" points="27,242 65,143 42,90" />
+<polygon fill="#5b6d38" fill-opacity="0.501961" points="70,191 81,75 49,69" />
+<polygon fill="#3e6394" fill-opacity="0.501961" points="113,49 90,112 119,107" />
+<polygon fill="#000000" fill-opacity="0.501961" points="109,118 118,98 135,160" />
+<polygon fill="#356c10" fill-opacity="0.501961" points="271,47 223,-10 263,-7" />
+<polygon fill="#4c6028" fill-opacity="0.501961" points="230,238 214,208 208,230" />
+<polygon fill="#425b26" fill-opacity="0.501961" points="13,165 24,79 -16,150" />
+<polygon fill="#153e7b" fill-opacity="0.501961" points="147,59 112,76 95,68" />
+<polygon fill="#b69f7d" fill-opacity="0.501961" points="35,271 15,166 75,271" />
+<polygon fill="#000000" fill-opacity="0.501961" points="88,151 98,121 96,174" />
+<polygon fill="#ffeaf7" fill-opacity="0.501961" points="28,66 39,69 23,58" />
+<polygon fill="#847d50" fill-opacity="0.501961" points="70,271 45,205 78,139" />
+<polygon fill="#f0f8ff" fill-opacity="0.501961" points="65,68 103,80 89,62" />
+</g>
+</svg>
