@@ -42,6 +42,12 @@ const Element = styled.div`
     padding: calc(${styles.timeline.sizeDot} * ${styles.global.sizeTiny});
     width: ${styles.timeline.sizeDot};
   }
+
+  @media print {
+    :nth-of-type(n + 7) {
+      display: none;
+    }
+  }
 `;
 
 export default class Timeline extends React.PureComponent {

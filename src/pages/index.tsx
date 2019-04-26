@@ -5,9 +5,7 @@ import MedallionImg from "../components/MedallionImg";
 import { Event, Timeline } from "../components/Timeline";
 import * as styles from "../styles";
 
-import * as avatar from "../assets/avatar.jpg";
 import * as location from "../assets/location.svg";
-import * as avatarPlaceholder from "../assets/placeholder.svg";
 
 const Container = styled.div`
   display: flex;
@@ -36,7 +34,6 @@ const Section = styled.div`
 const SectionIntro = Section.extend`
   flex: 1;
   padding: ${styles.sizeEvenBigger}em;
-  position: relative;
 `;
 
 const SectionTimeline = Section.extend`
@@ -52,38 +49,19 @@ const AvatarWrapper = styled.div`
   display: flex;
   font-size: ${styles.sizeEvenBigger}em;
   height: 1em;
-  position: relative;
-  width: calc(2em - 0.25em);
+  margin-top: ${styles.sizeTiny}em;
 
   @media print {
-    width: 1em;
+    display: none;
   }
 
   @media screen and (min-width: ${styles.sizeHuge * 3}em) {
     font-size: ${styles.sizeHuge}em;
   }
-
-  > * {
-    position: absolute;
-  }
-
-  > *:first-child {
-    z-index: 2;
-  }
-
-  > *:last-child {
-    left: 0.75em;
-    z-index: 1;
-
-    @media print {
-      display: none;
-    }
-  }
 `;
 
 const Header = styled.header`
   color: ${styles.colorText};
-  margin-top: ${styles.sizeBigger}em;
   text-align: center;
 
   > h1,
@@ -132,10 +110,6 @@ interface EventData {
 const IndexPage: React.StatelessComponent<Props> = ({ data: { allEventsJson: { edges: events } } }) => (
   <Container>
     <SectionIntro>
-      <AvatarWrapper>
-        <MedallionImg src={avatar} placeholder={avatarPlaceholder} />
-        <MedallionImg src={location} blink />
-      </AvatarWrapper>
       <Header>
         <h1>Rubén Illodo Brea</h1>
         <p>Software Engineer in&nbsp;Barcelona</p>
@@ -143,6 +117,9 @@ const IndexPage: React.StatelessComponent<Props> = ({ data: { allEventsJson: { e
       <Mail>
         <a href="mailto:me@rubenillodo.com">me@rubenillodo.com</a>
       </Mail>
+      <AvatarWrapper>
+        <MedallionImg src={location} />
+      </AvatarWrapper>
     </SectionIntro>
     <SectionTimeline>
       <Timeline>{events.map((event) => <Event {...event.node} key={event.node.id} />)}</Timeline>
