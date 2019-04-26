@@ -2,18 +2,6 @@
   "title": "Senior Software Engineer",
   "from": "2016-10-01T00:00:00.000Z",
   "to": "2017-11-30T00:00:00.000Z",
-  "at": "EF – English First",
-  "tags": [
-    "ES2015",
-    "TypeScript",
-    "ReactJS",
-    "Redux",
-    "NodeJS",
-    "Webpack",
-    "CI/CD",
-    "Jest",
-    "Enzyme",
-    "Docker",
-    "AWS ECS"
-  ]
+  "at": "English First, Shanghai",
+  "tags": ["JS", "TypeScript", "React", "Redux", "NodeJS", "Webpack", "CI/CD", "Jest", "Enzyme", "Docker", "AWS ECS"]
 }
