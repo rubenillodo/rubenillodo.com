@@ -3,5 +3,18 @@
   "from": "2018-05-07T00:00:00.000Z",
   "to": null,
   "at": "Lodgify, Barcelona",
-  "tags": ["JS", "TypeScript", "React", "Redux", "NodeJS", "Webpack", "CI/CD", "Jest", "Cypress"]
+  "tags": [
+    "JS",
+    "TypeScript",
+    "React",
+    "GraphQL",
+    "Apollo",
+    "Next.js",
+    "Redux",
+    "NodeJS",
+    "Webpack",
+    "CI/CD",
+    "Jest",
+    "Cypress"
+  ]
 }

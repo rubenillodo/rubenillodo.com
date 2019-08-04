@@ -112,7 +112,7 @@ const IndexPage: React.StatelessComponent<Props> = ({ data: { allEventsJson: { e
     <SectionIntro>
       <Header>
         <h1>Rubén Illodo Brea</h1>
-        <p>Software Engineer in&nbsp;Barcelona</p>
+        <p>Software Engineer</p>
       </Header>
       <Mail>
         <a href="mailto:me@rubenillodo.com">me@rubenillodo.com</a>
